@@ -47,19 +47,11 @@
 #include "proc_comm.h"
 
 /* TODO: Platform specific */
-#define MISSING_WIFI_POWER_SUPPORT
-
-
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 30)
-#define WLAN_EN				(93) //board delta
-#else
-#define WLAN_EN				(57) //board mogami
-#endif
-
-
-
+#define WLAN_EN				(108)
 #define LOW     0
 #define HIGH    1
+
+#define MISSING_WIFI_POWER_SUPPORT
 
 #define OS_API_MEM_ADRR  	0x0000000
 #define OS_API_REG_ADRR  	0x300000
@@ -97,7 +89,7 @@ int wifi_power(int on)
 }
 #else
 /* TODO: Platform specific */
-#define wifi_power robyn_wifi_power
+#define wifi_power latte_wifi_power
 int wifi_power(int on);
 #endif /* MISSING_WIFI_POWER_SUPPORT */
 

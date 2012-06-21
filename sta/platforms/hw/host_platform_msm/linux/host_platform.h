@@ -49,12 +49,7 @@
 /* TODO: Platform specific constant */
 /* This is extremely ugly but will do for the bringup */
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 30)
-#define TNETW_IRQ		MSM_GPIO_TO_INT(27) // board delta
-#else
-#define TNETW_IRQ		MSM_GPIO_TO_INT(147) // board mogami
-#endif
-
+#define TNETW_IRQ		MSM_GPIO_TO_INT(29)
 #define TIWLAN_IRQ_POLL_INTERVAL	    (HZ/100)
 
 
